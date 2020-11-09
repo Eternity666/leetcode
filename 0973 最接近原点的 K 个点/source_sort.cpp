@@ -12,3 +12,4 @@ public:
         return {points.begin(), points.begin() + K};
     }
 };
+
