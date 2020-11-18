@@ -4,28 +4,23 @@ public:
         int n = gas.size();
         int i = 0;
         while (i < n) {
-            int sumOfGas = 0, sumOfCost = 0;
-            int cnt = 0;
-            while (cnt < n) {
-                int j = (i + cnt) % n;
-                sumOfGas += gas[j];
-                sumOfCost += cost[j];
-                if (sumOfCost > sumOfGas) {
+            int sum_gas = 0, sum_cost = 0;
+            int count = 0;
+            while (count < n) {
+                int j = (i + count) % n;
+                sum_gas += gas[j];
+                sum_cost += cost[j];
+                if (sum_cost > sum_gas) {
                     break;
                 }
-                cnt++;
+                count++;
             }
-            if (cnt == n) {
+            if (count == n) {
                 return i;
             } else {
-                i = i + cnt + 1;
+                i = i + count + 1;
             }
         }
         return -1;
     }
 };
-
-作者：LeetCode-Solution
-链接：https://leetcode-cn.com/problems/gas-station/solution/jia-you-zhan-by-leetcode-solution/
-来源：力扣（LeetCode）
-著作权归作者所有。
